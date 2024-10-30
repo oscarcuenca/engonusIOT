@@ -371,9 +371,14 @@ ext {
 }
 
 // Add UI tasks
-ext.npmCommand = {
-    cmd ->
-        isFamily(FAMILY_WINDOWS) ? "${cmd}.cmd" : cmd
+ext.npmCommand = { cmd ->
+    if (isFamily(FAMILY_WINDOWS)) {
+        return "${cmd}.cmd"
+    } else if (cmd == "yarn") {
+        return "/home/ec2-user/.nvm/versions/node/v18.20.4/bin/yarn"
+    } else {
+        return cmd
+    }
 }
 
 // Add yarn tasks

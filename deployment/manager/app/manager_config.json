@@ -1,20 +1,48 @@
 {
+  "managers": {
+    "default": {
+      "logo": "/images/logo.svg",
+      "logoMobile": "/images/logo-mobile.svg",
+      "styles": {
+        "primary": "#00BFFF",
+        "secondary": "#00BFFF",
+        "success": "#00BFFF",
+        "action": "#00BFFF",
+        "error": "#ff0000"
+      },
+      "language": "en"
+    }
+  },
   "realms": {
     "default": {
       "appTitle": "OpenRemote Manager Demo",
-      "language": "en"
+      "language": "en",
+      "styles": ":host > * { --or-app-color2: #F6F7FA; --or-app-color3: #1B1464; --or-app-color4: #00BFFF; }",
+      "logo": "/images/logo.svg",
+      "logoMobile": "/images/logo-mobile.svg"
     },
     "smartcity": {
-      "styles": ":host > * {--or-app-color2: #F6F7FA; --or-app-color3: #1B1464; --or-app-color4: #662D91;}",
+      "styles": ":host > * { --or-app-color2: #F6F7FA; --or-app-color3: #1B1464; --or-app-color4: #00BFFF; }",
       "logo": "/images/logo_smartcity.svg",
       "logoMobile": "/images/logo-mobile_smartcity.svg"
     },
     "manufacturer": {
-      "styles": ":host > * {--or-app-color2: #F6FAFA; --or-app-color3: #1A2456; --or-app-color4: #29ABE2;}",
+      "styles": ":host > * { --or-app-color2: #F6FAFA; --or-app-color3: #1A2456; --or-app-color4: #00BFFF; }",
       "logo": "/images/logo_manufacturer.svg",
       "logoMobile": "/images/logo-mobile_manufacturer.svg"
     }
   },
+  "map": {
+    "default": {
+      "options": {
+        "centre": [5.478120148665891, 51.43969873456718],
+        "zoom": 15,
+        "minZoom": 14,
+        "maxZoom": 18
+      }
+    }
+  },
+  "css": ":root { --or-app-color4: #00BFFF !important; --or-success-color: #00BFFF !important; --internal-or-action-color: #00BFFF !important; --or-action-color: #00BFFF !important; --or-link-color: #00BFFF !important; --or-active-color: #00BFFF !important; --or-positive-color: #00BFFF !important; --internal-or-positive-color: #00BFFF !important; --or-main-color: #00BFFF !important; }",
   "pages": {
     "assets": {
       "viewer": {

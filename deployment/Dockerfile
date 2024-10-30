@@ -1,7 +1,6 @@
-# ----------------------------------------------------------------------------------------
-# Docker image for populating deployment-data volume with project specific customisations
-# ----------------------------------------------------------------------------------------
-FROM alpine:latest
+FROM openremote/deployment-base:latest
 
-RUN mkdir -p /deployment/manager/extensions
-ADD image /deployment
+COPY image/ /deployment/
+COPY keycloak/themes/ /opt/keycloak/themes/
+
+RUN chmod -R 755 /opt/keycloak/themes/

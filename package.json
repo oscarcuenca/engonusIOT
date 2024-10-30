@@ -9,6 +9,9 @@
     "ui/demo/*"
   ],
   "devDependencies": {
-    "@openremote/util": "workspace:*"
+    "@openremote/util": "workspace:*",
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-promise": "^5.0.0"
   }
 }

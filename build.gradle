@@ -2,6 +2,8 @@ import java.nio.file.Paths
 
 import static org.apache.tools.ant.taskdefs.condition.Os.FAMILY_WINDOWS
 import static org.apache.tools.ant.taskdefs.condition.Os.isFamily
+import org.apache.tools.ant.taskdefs.condition.Os
+apply plugin: 'base'
 
 allprojects {
     apply from: "${findProject(":openremote") != null ? project(":openremote").projectDir : rootDir}/project.gradle"
@@ -41,8 +43,11 @@ task checkFilesGitIgnoredNew(type: Exec) {
 def gitFile = Paths.get(projectDir.path, ".git").toFile()
 checkFilesGitIgnoredNew.enabled = gitFile.exists() && gitFile.isDirectory()
 
-task clean() {
-    doLast {
-        delete "tmp"
-    }
-}
+// task clean() {
+//    doLast {
+//        delete "tmp"
+//    }
+//  }
+
+// Asegura que la tarea 'build' dependa de 'yarnInstall'
+build.dependsOn yarnInstall

@@ -1,0 +1,9 @@
+/* ... inicio del código anterior ... */
+
+/* Añade este bloque nuevo para el espaciado superior */
+#outer-wrapper {
+    width: 100% !important;
+    margin-top: 300px !important; /* Puedes ajustar este valor según necesites */
+}
+
+/* ... resto del código ... */
