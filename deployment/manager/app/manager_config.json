@@ -1,8 +1,9 @@
 {
   "managers": {
     "default": {
-      "logo": "/images/logo.svg",
-      "logoMobile": "/images/logo-mobile.svg",
+      "theme": "engonus",
+      "logo": "/images/logo.png",
+      "logoMobile": "/images/logo-mobile.png",
       "styles": {
         "primary": "#00BFFF",
         "secondary": "#00BFFF",
@@ -14,197 +15,19 @@
     }
   },
   "realms": {
-    "default": {
-      "appTitle": "OpenRemote Manager Demo",
-      "language": "en",
-      "styles": ":host > * { --or-app-color2: #F6F7FA; --or-app-color3: #1B1464; --or-app-color4: #00BFFF; }",
-      "logo": "/images/logo.svg",
-      "logoMobile": "/images/logo-mobile.svg"
-    },
-    "smartcity": {
-      "styles": ":host > * { --or-app-color2: #F6F7FA; --or-app-color3: #1B1464; --or-app-color4: #00BFFF; }",
-      "logo": "/images/logo_smartcity.svg",
-      "logoMobile": "/images/logo-mobile_smartcity.svg"
-    },
-    "manufacturer": {
-      "styles": ":host > * { --or-app-color2: #F6FAFA; --or-app-color3: #1A2456; --or-app-color4: #00BFFF; }",
-      "logo": "/images/logo_manufacturer.svg",
-      "logoMobile": "/images/logo-mobile_manufacturer.svg"
-    }
-  },
-  "map": {
-    "default": {
-      "options": {
-        "centre": [5.478120148665891, 51.43969873456718],
-        "zoom": 15,
-        "minZoom": 14,
-        "maxZoom": 18
-      }
-    }
-  },
-  "css": ":root { --or-app-color4: #00BFFF !important; --or-success-color: #00BFFF !important; --internal-or-action-color: #00BFFF !important; --or-action-color: #00BFFF !important; --or-link-color: #00BFFF !important; --or-active-color: #00BFFF !important; --or-positive-color: #00BFFF !important; --internal-or-positive-color: #00BFFF !important; --or-main-color: #00BFFF !important; }",
-  "pages": {
-    "assets": {
-      "viewer": {
-        "assetTypes": {
-          "SoilSensorAsset": {
-            "viewerStyles": {},
-            "panels": [
-              {
-                "type": "group",
-                "title": "underlyingAssets"
-              },
-              {
-                "type": "info",
-                "hideOnMobile": true,
-                "properties": {
-                  "include": []
-                },
-                "attributes": {
-                  "include": ["notes"]
-                }
-              },
-              {
-                "type": "info",
-                "column": 1,
-                "title": "location",
-                "properties": {
-                  "include": []
-                },
-                "attributes": {
-                  "include": [
-                    "location"
-                  ],
-                  "itemConfig": {
-                    "location": {
-                      "label": ""
-                    }
-                  }
-                }
-              },
-              {
-                "type": "info",
-                "title": "Sensor Values",
-                "properties": {
-                  "include": []
-                },
-                "attributes": {
-                  "include": [
-                    "salinity",
-                    "soilTensionMeasured",
-                    "temperature"
-                  ]
-                }
-              },
-              {
-                "type": "info",
-                "title": "Settings",
-                "properties": {
-                  "include": []
-                },
-                "attributes": {
-                  "include": [
-                    "soilTensionMin",
-                    "soilTensionMax"
-                  ]
-                }
-              },
-              {
-                "type": "history",
-                "column": 1
-              },
-              {
-                "type": "linkedUsers",
-                "column": 1
-              }
-            ]
-          },
-          "HarvestRobotAsset": {
-            "viewerStyles": {},
-            "panels": [
-              {
-                "type": "group",
-                "title": "underlyingAssets"
-              },
-              {
-                "type": "info",
-                "hideOnMobile": true,
-                "properties": {
-                  "include": []
-                },
-                "attributes": {
-                  "include": ["notes"]
-                }
-              },
-              {
-                "type": "info",
-                "column": 1,
-                "title": "location",
-                "properties": {
-                  "include": []
-                },
-                "attributes": {
-                  "include": [
-                    "location"
-                  ],
-                  "itemConfig": {
-                    "location": {
-                      "label": ""
-                    }
-                  }
-                }
-              },
-              {
-                "type": "info",
-                "title": "Operation",
-                "properties": {
-                  "include": []
-                },
-                "attributes": {
-                  "include": [
-                    "operationMode",
-                    "speed",
-                    "direction"
-                  ]
-                }
-              },
-              {
-                "type": "info",
-                "column": 1,
-                "title": "Settings",
-                "properties": {
-                  "include": []
-                },
-                "attributes": {
-                  "include": [
-                    "vegetableType"
-                  ]
-                }
-              },
-              {
-                "type": "info",
-                "title": "Harvested",
-                "properties": {
-                  "include": []
-                },
-                "attributes": {
-                  "include": [
-                    "harvestedSession",
-                    "harvestedTotal"
-                  ]
-                }
-              },
-              {
-                "type": "history",
-                "column": 1
-              },
-              {
-                "type": "linkedUsers",
-                "column": 1
-              }
-            ]
-          }
-        }
+    "engonus": {
+      "appTitle": "ENGONUS",
+      "styles": {
+        "primary": "#00BFFF",
+        "secondary": "#00BFFF",
+        "background": "#ffffff",
+        "text": "#000000",
+        "link": "#00BFFF"
+      },
+      "logo": "/images/logo.png",
+      "logoMobile": "/images/logo-mobile.png",
+      "favicon": {
+        "src": "/images/favicon.ico"
       }
     }
   }

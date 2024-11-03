@@ -1,0 +1,105 @@
+.login-pf body {
+    background: #ffffff !important;
+}
+
+.login-pf {
+    background: #ffffff !important;
+}
+
+#kc-header {
+    background: none !important;
+}
+
+.card-pf {
+    margin: 0 auto;
+    box-shadow: var(--pf-global--BoxShadow--lg);
+    padding: 0 20px;
+    max-width: 500px;
+    border-top: 4px solid #00BFFF;
+}
+
+#kc-header-wrapper {
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    height: 100px;
+    padding: 62px 10px 20px;
+    margin-bottom: 20px;
+    font-size: 29px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 1.2em;
+    white-space: normal;
+}
+
+/* Botón principal */
+.btn-primary {
+    background-color: #00BFFF !important;
+    border-color: #00BFFF !important;
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background-color: #0099CC !important;
+    border-color: #0099CC !important;
+}
+
+/* Links */
+a {
+    color: #00BFFF;
+}
+
+a:hover {
+    color: #0099CC;
+}
+
+/* Campos de formulario */
+.form-control:focus {
+    border-color: #00BFFF;
+    box-shadow: 0 0 0 0.2rem rgba(0, 191, 255, 0.25);
+}
+
+/* Títulos */
+#kc-page-title {
+    color: #00BFFF;
+    margin-top: 10px;
+}
+
+/* Mensajes de error o información */
+.alert-error {
+    background-color: #ff6b6b;
+    border-color: #ff5252;
+    color: white;
+}
+
+.alert-info {
+    background-color: #00BFFF;
+    border-color: #0099CC;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .login-pf body {
+        background: white !important;
+    }
+    
+    #kc-header-wrapper {
+        font-size: 16px;
+        padding: 20px 60px 0 0;
+    }
+}
+
+/* Correcciones adicionales para el fondo */
+body {
+    background: #ffffff !important;
+}
+
+.login-pf-page {
+    background: #ffffff !important;
+}
+
+.header {
+    background: none !important;
+}

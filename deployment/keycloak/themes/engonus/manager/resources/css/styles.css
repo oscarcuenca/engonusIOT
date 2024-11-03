@@ -1,0 +1,38 @@
+/* Variables de color principales */
+:root {
+    --or-app-color4: #00BFFF !important;
+    --or-success-color: #00BFFF !important;
+    --internal-or-action-color: #00BFFF !important;
+    --or-action-color: #00BFFF !important;
+    --or-link-color: #00BFFF !important;
+    --or-active-color: #00BFFF !important;
+    --or-positive-color: #00BFFF !important;
+    --internal-or-positive-color: #00BFFF !important;
+    --or-main-color: #00BFFF !important;
+}
+
+/* Botones y acciones */
+.or-ActionButton,
+.or-Button--primary,
+.or-Button--positive,
+button[type="submit"],
+.btn-primary {
+    background-color: #00BFFF !important;
+    border-color: #00BFFF !important;
+    color: white !important;
+}
+
+/* Enlaces */
+a, 
+.or-Link,
+.or-Link:visited,
+a.active {
+    color: #00BFFF !important;
+}
+
+/* Estados de éxito y positivos */
+.success,
+.positive,
+.or-StatusIndicator--positive {
+    color: #00BFFF !important;
+}
