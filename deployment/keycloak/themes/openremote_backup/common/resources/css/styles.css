@@ -1,0 +1,14 @@
+/* styles.css */
+
+/* Cambiar el color de fondo del encabezado */
+.kc-header {
+    background-color: #123456; /* Reemplaza con tu color deseado */
+}
+
+/* Cambiar el color de los botones */
+.kc-button {
+    background-color: #654321; /* Reemplaza con tu color deseado */
+    border-color: #654321; /* Reemplaza con tu color deseado */
+}
+
+/* Otros estilos personalizados */

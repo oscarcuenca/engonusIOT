@@ -1,0 +1,17 @@
+{
+  "name": "openremote",
+  "packageManager": "yarn@4.1.0",
+  "private": true,
+  "workspaces": [
+    "ui/util",
+    "ui/app/*",
+    "ui/component/*",
+    "ui/demo/*"
+  ],
+  "devDependencies": {
+    "@openremote/util": "workspace:*",
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-promise": "^5.0.0"
+  }
+}
