@@ -1,0 +1,23 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "custom-project"
+
+include 'agent'
+include 'deployment'
+include 'manager'
+include 'model'
+
+includeBuild('openremote') {
+    dependencySubstitution {
+        substitute module('io.openremote:agent') using project(':agent')
+        substitute module('io.openremote:container') using project(':container')
+        substitute module('io.openremote:model') using project(':model')
+        substitute module('io.openremote:manager') using project(':manager')
+    }
+}
+include 'setup'

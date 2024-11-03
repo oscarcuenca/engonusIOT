@@ -1,0 +1,47 @@
+apply plugin: "java-library"
+
+configurations {
+    setupImplementation
+    setupImplementation.extendsFrom implementation
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://pkgs.dev.azure.com/OpenRemote/OpenRemote/_packaging/OpenRemote/maven/v1"
+    }
+}
+
+dependencies {
+    setupImplementation project(':setup')
+}
+
+task installDist(type: Copy) {
+    into "$buildDir"
+    
+    from('Dockerfile')
+    
+    into('image') {
+        from(projectDir) {
+            exclude 'build.gradle'
+            exclude 'Dockerfile'
+            exclude 'build'
+            exclude '**/*.mbtiles'
+            exclude 'src'
+            exclude '**/*.md'
+            exclude '.gitignore'
+        }
+    }
+    
+    into('image/manager/app') {
+        from('LICENSE.txt')
+    }
+    
+    into('image/manager/extensions') {
+        from configurations.runtimeClasspath
+    }
+    
+    doFirst {
+        file("$buildDir/image/manager/extensions").mkdirs()
+    }
+}

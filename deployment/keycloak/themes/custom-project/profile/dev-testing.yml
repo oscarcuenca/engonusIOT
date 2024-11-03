@@ -1,0 +1,32 @@
+version: '2.4'
+
+volumes:
+  postgresql-data:
+
+services:
+  keycloak:
+    extends:
+      file: ../profile/deploy.yml
+      service: keycloak
+    volumes:
+      - ./deployment/keycloak/themes:/opt/keycloak/themes:ro
+    ports:
+      - "8081:8080"
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    environment:
+      KC_HOSTNAME_STRICT_HTTPS: 'false'
+      KC_HOSTNAME_PORT: ${KC_HOSTNAME_PORT:-8080}
+      KEYCLOAK_START_OPTS: --spi-theme-static-max-age=-1 --spi-theme-cache-themes=false --spi-theme-cache-templates=false
+      KEYCLOAK_THEME: engonus
+
+  postgresql:
+    extends:
+      file: ../profile/deploy.yml
+      service: postgresql
+    volumes:
+      - ../tmp:/storage
+      - postgresql-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"

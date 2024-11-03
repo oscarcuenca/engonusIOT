@@ -1,0 +1,18 @@
+{
+  "username": "engonus",
+  "enabled": true,
+  "emailVerified": true,
+  "firstName": "Engonus",
+  "lastName": "User",
+  "email": "engonus@engon.us",
+  "credentials": [
+    {
+      "type": "password",
+      "value": "Engonus2023!",
+      "temporary": false
+    }
+  ],
+  "requiredActions": [],
+  "realmRoles": ["admin", "manager"],
+  "attributes": {}
+}

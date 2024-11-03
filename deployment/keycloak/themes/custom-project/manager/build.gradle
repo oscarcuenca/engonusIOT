@@ -1,0 +1,16 @@
+apply plugin: "java-library"
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://pkgs.dev.azure.com/OpenRemote/OpenRemote/_packaging/OpenRemote/maven/v1"
+    }
+}
+
+dependencies {
+    implementation 'io.openremote:container:3.0-SNAPSHOT'
+    implementation 'io.openremote:model:3.0-SNAPSHOT'
+}
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17

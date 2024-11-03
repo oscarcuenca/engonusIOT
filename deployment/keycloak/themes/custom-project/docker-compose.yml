@@ -1,0 +1,59 @@
+version: '2.4'
+
+volumes:
+  proxy-data:
+  deployment-data:
+  postgresql-data:
+
+services:
+  proxy:
+    image: openremote/proxy:latest
+    restart: always
+    depends_on:
+      manager:
+        condition: service_healthy
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8883:8883"
+    volumes:
+      - proxy-data:/deployment
+      - deployment-data:/data
+      - ./deployment/certs:/deployment/proxy/certs:ro
+    environment:
+      DOMAINNAME: ${OR_HOSTNAME:-52.50.247.94}
+      SSL_CERT_PATH: "/deployment/proxy/certs/public.crt"
+      SSL_KEY_PATH: "/deployment/proxy/certs/private.key"
+
+  postgresql:
+    image: openremote/postgresql:latest
+    restart: always
+    volumes:
+      - postgresql-data:/var/lib/postgresql/data
+      - deployment-data:/deployment
+
+  keycloak:
+    image: openremote/keycloak:latest
+    restart: always
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    volumes:
+      - deployment-data:/deployment
+    environment:
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_HOSTNAME_STRICT_HTTPS: 'false'
+      KC_PROXY: edge
+
+  manager:
+    image: openremote/manager:latest
+    restart: always
+    depends_on:
+      keycloak:
+        condition: service_healthy
+    volumes:
+      - deployment-data:/deployment
+    environment:
+      OR_ADMIN_PASSWORD: admin
+      OR_SSL_PORT: "443"
+      OR_HOSTNAME: ${OR_HOSTNAME:-52.50.247.94}
