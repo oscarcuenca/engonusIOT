@@ -1,34 +1,11 @@
 {
-  "managers": {
-    "default": {
-      "theme": "engonus",
-      "logo": "/images/logo.png",
-      "logoMobile": "/images/logo-mobile.png",
-      "styles": {
-        "primary": "#00BFFF",
-        "secondary": "#00BFFF",
-        "success": "#00BFFF",
-        "action": "#00BFFF",
-        "error": "#ff0000"
-      },
-      "language": "en"
-    }
-  },
   "realms": {
-    "engonus": {
+    "default": {
       "appTitle": "ENGONUS",
-      "styles": {
-        "primary": "#00BFFF",
-        "secondary": "#00BFFF",
-        "background": "#ffffff",
-        "text": "#000000",
-        "link": "#00BFFF"
-      },
-      "logo": "/images/logo.png",
-      "logoMobile": "/images/logo-mobile.png",
-      "favicon": {
-        "src": "/images/favicon.ico"
-      }
+      "styles": ":host > * {--or-app-color2: #F9F9F9; --or-app-color3: #22211f; --or-app-color4: #00BFFF; --or-app-color5: #CCCCCC;}",
+      "logo": "/images/engonus/logo.png",
+      "logoMobile": "/images/engonus/logo-mobile.png",
+      "favicon": "/images/engonus/favicon.ico"
     }
   }
 }

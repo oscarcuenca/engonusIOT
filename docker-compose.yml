@@ -26,9 +26,12 @@ services:
       - "127.0.0.1:8404:8404"  # Localhost metrics access
     volumes:
       - proxy-data:/deployment
+      - /etc/letsencrypt/live/iot.engonus.es/fullchain.pem:/etc/ssl/certs/fullchain.pem
+      - /etc/letsencrypt/live/iot.engonus.es/privkey.pem:/etc/ssl/private/privkey.pem
     environment:
       LE_EMAIL: "oscarcuenca2@hotmail.com"
-      DOMAINNAME: "52.50.247.94"
+     # DOMAINNAME: "52.50.247.94"
+      DOMAINNAME: "iot.engonus.es"
 
   postgresql:
     restart: always
@@ -49,9 +52,9 @@ services:
       - ./deployment/keycloak/themes:/opt/keycloak/themes
     environment:
       KEYCLOAK_ADMIN_PASSWORD: "Migatoesolivo123k!"
-      KC_HOSTNAME: "52.50.247.94"
+      KC_HOSTNAME: "iot.engonus.es"
       KC_HOSTNAME_PORT: "443"
-      KEYCLOAK_FRONTEND_URL: "https://52.50.247.94/auth"
+      KEYCLOAK_FRONTEND_URL: "https://iot.engonus.es/auth"
       KEYCLOAK_THEME: "engonus"
 
   manager:
@@ -63,7 +66,7 @@ services:
     ports:
       - "127.0.0.1:8405:8405"  # Localhost metrics access
     environment:
-      OR_HOSTNAME: "52.50.247.94"
+      OR_HOSTNAME: "iot.engonus.es"
       OR_SSL_PORT: "443"
       OR_ADMIN_PASSWORD: "Migatoesolivo123k!"
       OR_METRICS_ENABLED: "true"
@@ -71,4 +74,4 @@ services:
       OR_KEYSTORE_PASSWORD: "Migatoesolivo123k!"
       OR_PRIVATE_KEY_PASSWORD: "Migatoesolivo123k!"
     volumes:
-      - manager-data:/storage
+      - ./deployment:/deployment
